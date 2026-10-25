@@ -1,0 +1,379 @@
+annotations: []
+smart_annotations: []
+nodes:
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: |-
+          Building configuration...
+
+          Current configuration : 2858 bytes
+          !
+          ! Last configuration change at 18:33:05 UTC Sun Oct 25 2026
+          !
+          version 15.2
+          service timestamps debug datetime msec
+          service timestamps log datetime msec
+          no service password-encryption
+          service compress-config
+          !
+          hostname SW1
+          !
+          boot-start-marker
+          boot-end-marker
+          !
+          !
+          no logging console
+          !
+          no aaa new-model
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          ip cef
+          no ipv6 cef
+          !
+          !
+          !
+          spanning-tree mode pvst
+          spanning-tree extend system-id
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          interface GigabitEthernet0/0
+           switchport mode access
+           negotiation auto
+          !
+          interface GigabitEthernet0/1
+           switchport mode access
+           negotiation auto
+          !
+          interface GigabitEthernet0/2
+           negotiation auto
+          !
+          interface GigabitEthernet0/3
+           negotiation auto
+          !
+          interface Vlan1
+           ip address 192.168.1.2 255.255.255.0
+          !
+          ip forward-protocol nd
+          !
+          ip http server
+          ip http secure-server
+          !
+          ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+          ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+          !
+          !
+          !
+          !
+          !
+          !
+          control-plane
+          !
+          banner exec ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          banner incoming ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          banner login ^C
+          IOSv - Cisco Systems Confidential -
+
+          Supplemental End User License Restrictions
+
+          This IOSv software is provided AS-IS without warranty of any kind. Under no circumstances may this software be used separate from the Cisco Modeling Labs Software that this software was provided with, or deployed or used as part of a production environment.
+
+          By using the software, you agree to abide by the terms and conditions of the Cisco End User License Agreement at http://www.cisco.com/go/eula. Unauthorized use or distribution of this software is expressly prohibited.
+          ^C
+          !
+          line con 0
+           exec-timeout 0 0
+          line aux 0
+          line vty 0 4
+           exec-timeout 0 0
+           login
+          !
+          mac address-table static aabb.cc00.0100 vlan 1 interface GigabitEthernet0/0
+          !
+          end
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n0
+    image_definition: null
+    label: SW1
+    node_definition: iosvl2
+    parameters: {}
+    priority: null
+    pyats:
+      username: null
+      password: null
+      enable_password: null
+    ram: null
+    tags: []
+    x: -80
+    y: 0
+    interfaces:
+      - id: i0
+        label: Loopback0
+        mac_address: null
+        type: loopback
+      - id: i1
+        label: GigabitEthernet0/0
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i2
+        label: GigabitEthernet0/1
+        mac_address: null
+        type: physical
+        slot: 1
+      - id: i3
+        label: GigabitEthernet0/2
+        mac_address: null
+        type: physical
+        slot: 2
+      - id: i4
+        label: GigabitEthernet0/3
+        mac_address: null
+        type: physical
+        slot: 3
+  - boot_disk_size: null
+    configuration: []
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n1
+    image_definition: null
+    label: server-0
+    node_definition: server
+    parameters: {}
+    priority: null
+    pyats:
+      username: null
+      password: null
+      enable_password: null
+    ram: null
+    tags: []
+    x: 160
+    y: -200
+    interfaces:
+      - id: i0
+        label: eth0
+        mac_address: null
+        type: physical
+        slot: 0
+  - boot_disk_size: null
+    configuration: []
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n2
+    image_definition: null
+    label: server-1
+    node_definition: server
+    parameters: {}
+    priority: null
+    pyats:
+      username: null
+      password: null
+      enable_password: null
+    ram: null
+    tags: []
+    x: 240
+    y: -120
+    interfaces:
+      - id: i0
+        label: eth0
+        mac_address: null
+        type: physical
+        slot: 0
+  - boot_disk_size: null
+    configuration: []
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n3
+    image_definition: null
+    label: server-2
+    node_definition: server
+    parameters: {}
+    priority: null
+    pyats:
+      username: null
+      password: null
+      enable_password: null
+    ram: null
+    tags: []
+    x: 240
+    y: 0
+    interfaces:
+      - id: i0
+        label: eth0
+        mac_address: null
+        type: physical
+        slot: 0
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: "Building configuration...\n\nCurrent configuration : 3199 bytes\n\
+          !\n! Last configuration change at 18:33:04 UTC Sun Oct 25 2026\n!\nversion\
+          \ 17.18\nservice timestamps debug datetime msec\nservice timestamps log\
+          \ datetime msec\n!\nhostname R1\n!\nboot-start-marker\nboot-end-marker\n\
+          !\n!\nno logging console\nno aaa new-model\n!\n!\n!\n!\n!\n!\n!\n!\n!\n\
+          !\n!\n!\n!\nip cef\nlogin on-success log\nno ipv6 cef\n!\n!\n!\n!\n!\n!\n\
+          !\n!\n!\n!\ncrypto pki trustpoint TP-self-signed-2039809\n enrollment selfsigned\n\
+          \ subject-name cn=IOS-Self-Signed-Certificate-2039809\n revocation-check\
+          \ none\n rsakeypair TP-self-signed-2039809\n hash sha512\n!\n!\ncrypto pki\
+          \ certificate chain TP-self-signed-2039809\n certificate self-signed 01\n\
+          \  3082032A 30820212 A0030201 02020101 300D0609 2A864886 F70D0101 0D050030\n\
+          \  2E312C30 2A060355 04030C23 494F532D 53656C66 2D536967 6E65642D 43657274\n\
+          \  69666963 6174652D 32303339 38303930 1E170D32 36313032 35313632 3332345A\n\
+          \  170D3336 31303234 31363233 32345A30 2E312C30 2A060355 04030C23 494F532D\n\
+          \  53656C66 2D536967 6E65642D 43657274 69666963 6174652D 32303339 38303930\n\
+          \  82012230 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02 82010100\n\
+          \  BDAC201C 2FA4F956 5721F566 F19B49B7 048B6064 41F324F1 41BC226B A2B2CEF1\n\
+          \  8A186D33 ABF35CAB 76884FA5 10CF8195 AC01A8F9 7FE6F952 5097585B BDF35549\n\
+          \  0324CA50 68475091 A1AD9B27 1686303A 8E2128AF 81ADED5B 687694DD 83503A2C\n\
+          \  1AEF99EB B4002E73 6ADFCDE0 52E1FDEE 517DE03E 983D0B60 C340BC2B 47F28C59\n\
+          \  D97E852C C92B005D 550A5341 01AD8F95 1AD438DD 37DFEFEA 3D2B19DE 95DE2BD2\n\
+          \  3F2409F0 F290D32C B0C4EB69 C4452310 5018BB73 81EC957C DCFB3426 86AFEE37\n\
+          \  66766859 2CE33C73 A6C4A9BF FF31E3F0 B4DA8C8D 433046EF CEE2D515 21C02FAD\n\
+          \  4AE644EA A3D09E8B B6FE6B21 68B3092E 8809FC71 11899233 7E5A218A 2918B419\n\
+          \  02030100 01A35330 51301D06 03551D0E 04160414 FCCD29CB 111D55B6 522CF35E\n\
+          \  641B8CE9 D1835AD5 301F0603 551D2304 18301680 14FCCD29 CB111D55 B6522CF3\n\
+          \  5E641B8C E9D1835A D5300F06 03551D13 0101FF04 05300301 01FF300D 06092A86\n\
+          \  4886F70D 01010D05 00038201 01003023 720243A9 1A142632 24BD3B84 602B0F1C\n\
+          \  A9F62077 42068F9B E5C3AF0B 61CC18E5 7D9A45AF 50055B40 04788EC0 41B42BFC\n\
+          \  72B0B439 E9229113 A5F5F08B 08200499 DA633940 87FD2238 88F0DF2B 8F4E32FA\n\
+          \  94296F63 9503E93D 2A25978E 5C510B92 A10B3FA7 A8F46966 9A4EC0F4 A3B9DABE\n\
+          \  C996DDBD 445600C4 4D20192B 937BBE64 9A5883FB DA784538 B83131C3 D2B2CE27\n\
+          \  41072095 976E05A3 7FFB7326 85820647 E0C4EE7A 3A4D6056 052D82F8 C49EA113\n\
+          \  20324754 94C07A29 60C799DD 32F8F674 59B604D8 53290902 0F23AD6C B55DD9AB\n\
+          \  B382230C D0880641 076ED62E 285567DC 1D37FBD5 0A467A50 4C82CFCF C7267111\n\
+          \  FDDAA8AD FB8EF42C A9F2CB6E 6A4C\n  \tquit\n!\n!\nmemory free low-watermark\
+          \ processor 79866\n!\n!\nspanning-tree mode rapid-pvst\n!\n!\n!\n!\n!\n\
+          !\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\ninterface Ethernet0/0\n\
+          \ ip address 192.168.1.1 255.255.255.0\n!\ninterface Ethernet0/1\n no ip\
+          \ address\n shutdown\n!\ninterface Ethernet0/2\n no ip address\n shutdown\n\
+          !\ninterface Ethernet0/3\n no ip address\n shutdown\n!\nip forward-protocol\
+          \ nd\n!\n!\nip http server\nip http secure-server\nip ssh bulk-mode 131072\n\
+          no logging btrace\n!\n!\n!\ncontrol-plane\n!\n!\n!\nline con 0\n exec-timeout\
+          \ 0 0\n activation-character 13\n logging synchronous\nline aux 0\n activation-character\
+          \ 13\nline vty 0 4\n exec-timeout 0 0\n activation-character 13\n login\n\
+          \ transport input ssh\n!\n!\n!\n!\nend"
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n4
+    image_definition: null
+    label: R1
+    node_definition: iol-xe
+    parameters: {}
+    priority: null
+    pyats:
+      username: null
+      password: null
+      enable_password: null
+    ram: null
+    tags: []
+    x: -440
+    y: 0
+    interfaces:
+      - id: i0
+        label: Loopback0
+        mac_address: null
+        type: loopback
+      - id: i1
+        label: Ethernet0/0
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i2
+        label: Ethernet0/1
+        mac_address: null
+        type: physical
+        slot: 1
+      - id: i3
+        label: Ethernet0/2
+        mac_address: null
+        type: physical
+        slot: 2
+      - id: i4
+        label: Ethernet0/3
+        mac_address: null
+        type: physical
+        slot: 3
+links:
+  - id: l0
+    n1: n4
+    n2: n0
+    i1: i1
+    i2: i1
+    conditioning: {}
+    label: iol-0-Ethernet0/0<->iosvl2-0-GigabitEthernet0/0
+  - id: l1
+    n1: n0
+    n2: n1
+    i1: i2
+    i2: i0
+    conditioning: {}
+    label: iosvl2-0-GigabitEthernet0/1<->server-0-eth0
+  - id: l2
+    n1: n0
+    n2: n2
+    i1: i3
+    i2: i0
+    conditioning: {}
+    label: iosvl2-0-GigabitEthernet0/2<->server-1-eth0
+  - id: l3
+    n1: n0
+    n2: n3
+    i1: i4
+    i2: i0
+    conditioning: {}
+    label: iosvl2-0-GigabitEthernet0/3<->server-2-eth0
+lab:
+  description: ''
+  notes: ''
+  title: Layer 2 forwarding, static MAC, packet capture
+  node_staging:
+    enabled: false
+    start_remaining: true
+    abort_on_failure: false
+  version: 0.3.1
